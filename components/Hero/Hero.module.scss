@@ -1,0 +1,173 @@
+@import 'mixins/mixins.scss';
+
+.container {
+    padding: 80px 115px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+
+    .mainText {
+        font-size: 67px;
+        font-weight: 600;
+        max-width: 510px;
+    }
+
+    .description {
+        font-size: 22px;
+        font-weight: 400;
+        margin-top: 20px;
+        max-width: 510px;
+    }
+
+    .startBtn {
+        @include flexCenter;
+        gap: 12px;
+        padding: 20px 50px;
+        border-radius: 20px;
+        cursor: pointer;
+        border: none;
+        background-color: #A259FF;
+        margin-top: 30px;
+
+        .btnStartText {
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+
+    .info {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 30px;
+        margin-top: 30px;
+
+        .infoPrice {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .infoText {
+            font-size: 24px;
+            font-weight: 400;
+        }
+    }
+
+    .heroImg {
+        border-radius: 20px 20px 0px 0px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .underHeroImg {
+        margin-top: -4px;
+        background-color: #3B3B3B;
+        padding: 20px;
+        border-radius: 0 0 20px 20px;
+
+        .underHeroText {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .artistCard {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 12px;
+            margin-top: 10px;
+
+            .avatar {
+                border-radius: 120px;
+            }
+
+            .artistName {
+                font-size: 16px;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1275px) {
+    .container {
+        padding: 80px 72px;
+        gap: 20px;
+
+        .mainText {
+            font-size: 38px;
+            font-weight: 600;
+        }
+
+        .description {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .info {
+
+            .infoPrice {
+                font-size: 22px;
+                font-weight: 700;
+            }
+
+            .infoText {
+                font-size: 16px;
+                font-weight: 400;
+            }
+        }
+
+        .heroImg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .container {
+        padding: 40px 30px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas:
+            'title' 
+            'description' 
+            'heroImg' 
+            'startBtn' 
+            'info';
+
+        .mainText {
+            grid-area: title;
+        }
+
+        .description {
+            grid-area: description;
+        }
+
+        .heroImg {
+            grid-area: heroImg;
+        }
+
+        .startBtn {
+            grid-area: startBtn;
+        }
+
+        .info {
+            grid-area: info;
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

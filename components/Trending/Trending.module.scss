@@ -1,0 +1,118 @@
+@import 'mixins/mixins.scss';
+
+.container {
+    padding: 80px 115px;
+
+    .trendingTitle {
+        font-size: 38px;
+        font-weight: 600;
+    }
+
+    .description {
+        font-size: 22px;
+        font-weight: 400;
+        margin-top: 10px;
+    }
+
+    .collectionCards {
+        margin-top: 60px;
+        @include flexBetween;
+
+
+        
+        .trendingMainImg {
+            border-radius: 20px;
+        }
+
+        .subMainCard {
+            @include flexCenter;
+            gap: 15px;
+            margin-top: 15px;
+
+            .trendingSubMainImg {
+                border-radius: 20px
+            }
+        }
+
+        .trendingNumber {
+            @include flexCenter;
+            width: 100px;
+            height: 100px;
+            padding: 15px 32px;
+            background-color: #A259FF;
+
+            .numNFT {
+                font-size: 22px;
+                font-weight: 700;
+            }
+        }
+
+        .artistCard {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 12px;
+            margin-top: 10px;
+
+            .avatar {
+                border-radius: 120px;
+            }
+
+            .artistName {
+                font-size: 16px;
+                font-weight: 400;
+            }
+        }
+
+        .trendingInfo {
+            font-size: 22px;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 1275px) {
+    .container {
+        padding: 40px 72px;
+
+        .trendingTitle {
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .description {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .collectionCards {
+
+            .collectionCard:last-child {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 834px) {
+    .container {
+        padding: 40px 30px;
+
+        .trendingTitle {
+            text-align: center;
+        }
+
+        .description {
+            text-align: center;
+        }
+
+        .collectionCards {
+            justify-content: center;
+
+            .collectionCard:nth-child(2) {
+                display: none;
+            }
+        }
+    }
+}

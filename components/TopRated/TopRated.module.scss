@@ -1,0 +1,166 @@
+@import 'mixins/mixins.scss';
+
+.container {
+    padding: 80px 115px;
+
+    .creatorsSection {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        .title {
+            font-size: 38px;
+            font-weight: 600;
+        }
+
+        .description {
+            font-size: 22px;
+            font-weight: 400;
+            margin-top: 10px;
+        }
+
+        .btnRocket {
+            @include flexCenter;
+            gap: 12px;
+            padding: 20px 50px;
+            border-radius: 20px;
+            cursor: pointer;
+            border: 2px solid #A259FF;
+            background-color: transparent;
+
+            .btnText {
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .artistCards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        margin-top: 60px;
+
+        .artistCard {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 20px;
+            background-color: #3B3B3B;
+            border-radius: 20px;
+
+            .artistImg {
+                border-radius: 100px;
+            }
+
+            .artistName {
+                margin-top: 20px;
+                font-size: 22px;
+                font-weight: 600;
+            }
+
+            .sales {
+                margin-top: 5px;
+
+                .salesText1 {
+                    color: #858584;
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+
+                .salesText2 {
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+            }
+
+            .artistId {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                background-color: #2B2B2B;
+                border-radius: 20px;
+                color: #858584;
+                padding: 4px 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .container {
+        padding: 40px 72px;
+
+        .creatorsSection {
+
+            .title {
+                font-size: 28px;
+                font-weight: 600;
+            }
+    
+            .description {
+                font-size: 16px;
+                font-weight: 400;
+            } 
+        } 
+    }
+}
+
+@media screen and (max-width: 1175px) {
+    .container {
+
+        .artistCards {
+            grid-template-columns: repeat(2, 1fr);
+
+            .artistCard:nth-child(n+7) {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 602px) {
+    .container {
+        padding: 40px 30px;
+
+        .creatorsSection {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto;
+            grid-template-areas: 
+                'creatorsText'
+                'btnRocket';
+
+            .creatorsText {
+                grid-area: creatorsText;
+            }
+
+            .btnRocket {
+                margin-top: 20px;
+                grid-area: btnRocket;
+            }
+        }
+
+        .artistCards {
+            
+            .artistCard {
+                padding: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+
+        .artistCards {
+            .artistCard {
+                .sales {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

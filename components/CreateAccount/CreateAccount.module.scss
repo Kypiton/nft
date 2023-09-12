@@ -1,0 +1,114 @@
+@import 'mixins/mixins.scss';
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+
+    .signUpImg {
+        max-width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+
+    .signupBlock {
+        
+        .title {
+            font-size: 51px;
+            font-weight: 600;
+        }
+
+        .description {
+            font-size: 22px;
+            font-weight: 400;
+            margin-top: 20px;
+            max-width: 460px;
+        }
+
+        .signupForm {
+            display: flex;
+            flex-direction: column;
+            margin-top: 25px;
+            position: relative;
+
+            .iconUser {
+                position: absolute;
+                top: 29px;
+                left: 20px;
+            }
+
+            .envelopeIcon {
+                position: absolute;
+                top: 93px;
+                left: 20px;
+            }
+
+            .lockKey1 {
+                position: absolute;
+                top: 157px;
+                left: 20px;
+            }   
+
+            .lockKey2 {
+                position: absolute;
+                top: 222px;
+                left: 20px;
+            }
+
+            .formInput {
+                padding: 16px 52px;
+                border-radius: 20px;
+                border: 1px solid #858584;
+                background: #FFF;
+                outline: none;
+                color: #2B2B2B;
+                margin-top: 15px;
+            }
+
+            .signupBtn {
+                border-radius: 20px;
+                background: #A259FF;
+                text-align: center;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                margin-top: 30px;
+                font-size: 16px;
+                font-weight: 600;
+                padding: 12px 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .container {
+
+        .signupBlock {
+            .title {
+                font-size: 38px;
+                font-weight: 600;
+            }
+
+            .description {
+                font-size: 16px;
+                font-weight: 400;
+            }   
+        }
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .container {
+        flex-direction: column;
+
+        .signUpImg {
+            width: 100%;
+        }
+
+        .signupBlock {
+            padding: 40px 30px;
+        }
+    }
+}

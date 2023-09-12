@@ -1,0 +1,89 @@
+@import 'mixins/mixins.scss';
+
+.container {
+    padding: 80px 115px;
+    
+    .title {
+        font-size: 38px;
+        font-weight: 600;
+    }
+
+    .browseCards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: space-between;
+        justify-items: center;
+        margin-top: 60px;
+        gap: 20px;
+
+        .browseCard {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            
+            .browseBlured {
+                filter: blur(3px);
+                border-radius: 20px 20px 0 0;
+                backdrop-filter: blur(7.5px);
+            }
+
+            .browseIcon {
+                position: absolute;
+                top: 30%; /* Положение по вертикали в середине элемента */
+                left: 50%; /* Положение по горизонтали в середине элемента */
+                transform: translate(-50%, -50%);
+            }
+
+            .browseName {
+                padding: 30px;
+                background-color: #3B3B3B;
+                font-size: 22px;
+                font-weight: 600;
+                border-radius: 0 0 20px 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1275px) {
+    .container {
+        padding: 40px 72px;
+
+        .title {
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .browseCards {
+    
+            .browseCard {
+                
+                .browseBlured {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .browseName {
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        padding: 40px 30px;
+
+        .browseCards {
+            margin-top: -10px;
+            grid-template-columns: repeat(2, 1fr);
+            
+            .browseCard {
+                margin-top: 30px;
+            }   
+        }
+    }
+}

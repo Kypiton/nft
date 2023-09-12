@@ -1,0 +1,171 @@
+@import 'mixins/mixins.scss';
+
+.container {
+  padding: 80px 115px;
+
+  .nftsSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .title {
+      font-size: 38px;
+      font-weight: 600;
+    }
+
+    .description {
+      font-size: 22px;
+      font-weight: 400;
+      margin-top: 10px;
+    }
+
+    .btnRocket {
+      @include flexCenter;
+      gap: 12px;
+      padding: 20px 50px;
+      border-radius: 20px;
+      cursor: pointer;
+      border: 2px solid #a259ff;
+      background-color: transparent;
+
+      .btnText {
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .nftsCards {
+    margin-top: 60px;
+    @include flexBetween;
+
+    .nftCard {
+      display: flex;
+      flex-direction: column;
+
+      .nftImage {
+        border-radius: 20px 20px 0 0;
+      }
+
+      .nftInfo {
+        background-color: #3b3b3b;
+        padding: 20px 30px;
+        border-radius: 0 0 20px 20px;
+
+        .nftTitle {
+          font-size: 22px;
+          font-weight: 600;
+        }
+
+        .nftSubtitle {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 12px;
+          margin-top: 5px;
+
+          .artist {
+            border-radius: 120px;
+          }
+
+          .artistName {
+            font-size: 16px;
+            font-weight: 400;
+          }
+        }
+
+        .nftTitlePrice {
+          @include flexBetween;
+          font-size: 12px;
+          font-weight: 400;
+          margin-top: 25px;
+
+          .nftNaming {
+            color: #858584;
+          }
+        }
+
+        .nftPrice {
+          @include flexBetween;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1275px) {
+  .container {
+    padding: 40px 72px;
+
+    .nftsSection {
+      .nftsText {
+        .title {
+          font-size: 28px;
+          font-weight: 600;
+        }
+
+        .description {
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .nftsCards {
+      .nftCard:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .container {
+    padding: 40px 30px;
+
+    .nftsSection {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas:
+        'nftsText'
+        'btnRocket';
+
+      .nftsText {
+        grid-area: nftsText;
+      }
+
+      .btnRocket {
+        grid-area: btnRocket;
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+
+    .nftsCards {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      .nftCard {
+        display: flex;
+        flex-direction: column;
+        margin: 20px auto;
+
+        .nftImage {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .nftInfo {
+          width: 100%;
+        }
+      }
+
+      .nftCard:last-child {
+        display: flex;
+      }
+    }
+  }
+}

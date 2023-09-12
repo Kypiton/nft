@@ -1,0 +1,227 @@
+@import 'mixins/mixins.scss';
+
+.container {
+  padding: 80px 115px;
+
+  .title {
+    font-size: 51px;
+    font-weight: 600;
+  }
+
+  .description {
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 400;
+  }
+
+  .inputBlock {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    margin-top: 30px;
+
+    .input {
+      color: #858584;
+      font-size: 16px;
+      font-weight: 400;
+      border-radius: 20px;
+      border: 1px solid #3b3b3b;
+      outline: none;
+      background-color: transparent;
+      padding: 20px 45px 20px 20px;
+      width: 100%;
+    }
+
+    .glass {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+    }
+  }
+
+  .categories {
+    @include flexCenter;
+    margin-top: 90px;
+
+    .category {
+      @include flexCenter;
+      gap: 16px;
+      padding: 15px 200px;
+      cursor: pointer;
+
+      .nftsText {
+        font-size: 22px;
+        font-weight: 600;
+        color: #858584;
+      }
+
+      .nftsNumber {
+        padding: 5px 10px;
+        border-radius: 20px;
+        background: #3b3b3b;
+      }
+
+      .activeText {
+        color: #fff;
+      }
+
+      .activeNumber {
+        color: #fff;
+        background: #858584;
+      }
+    }
+
+    .activeCategory {
+      border-bottom: 2px solid #858584;
+    }
+  }
+
+  .nftCards {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px;
+
+    .nftCard {
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+
+      .nftImage {
+        border-radius: 20px 20px 0 0;
+        width: 100%;
+      }
+
+      .nftInfo {
+        background-color: #3b3b3b;
+        padding: 20px 30px;
+        margin-top: -4px;
+        border-radius: 0 0 20px 20px;
+
+        .nftTitle {
+          font-size: 22px;
+          font-weight: 600;
+        }
+
+        .nftSubtitle {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 12px;
+          margin-top: 5px;
+
+          .artist {
+            border-radius: 120px;
+          }
+
+          .artistName {
+            font-size: 16px;
+            font-weight: 400;
+          }
+        }
+
+        .nftTitlePrice {
+          @include flexBetween;
+          font-size: 12px;
+          font-weight: 400;
+          margin-top: 25px;
+
+          .nftNaming {
+            color: #858584;
+          }
+        }
+
+        .nftPrice {
+          @include flexBetween;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .container {
+    .categories {
+      .category {
+        padding: 15px 100px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1285px) {
+  .container {
+    padding: 60px 77px;
+  }
+}
+
+@media screen and (max-width: 1205px) {
+  .container {
+    .title {
+      font-size: 38px;
+      font-weight: 600;
+    }
+
+    .description {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .nftCards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 835px) {
+  .container {
+    padding: 40px 30px;
+
+    .title {
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    .description {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .nftCards {
+      grid-template-columns: 1fr;
+
+      .nftImage {
+        object-fit: cover;
+      }
+
+      .noNft {
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+
+    .categories {
+      .category {
+        .nftsText {
+          font-size: 16px;
+          font-weight: 600;
+        }
+        .nftsNumber {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .container {
+    .categories {
+      .category {
+        padding: 15px 50px;
+      }
+    }
+  }
+}

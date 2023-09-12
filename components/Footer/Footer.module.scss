@@ -1,0 +1,172 @@
+@import 'mixins/mixins.scss';
+
+.container {
+    padding: 40px 115px;
+    background-color: #3B3B3B;
+    
+    .hr {
+        height: 1px;
+        background: #858584;
+        margin-top: 30px;
+    }
+
+    .copyright {
+        font-size: 12px;
+        font-weight: 400;
+        color: #CCC;
+        margin-top: 20px;
+    }
+
+    .threeColumns {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .firstColumn {
+
+        .logoBlock {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            cursor: pointer;
+            gap: 12px;
+    
+            .logoText {
+                font-size: 22px;
+                font-weight: 600;
+                transition: all .2s ease-in-out;
+
+                &:hover {
+                    color: #A259FF;
+                }
+            }
+        }
+
+        .description1 {
+            font-size: 16px;
+            font-weight: 400;
+            margin-top: 30px;
+        }
+
+        .description2 {
+            font-size: 16px;
+            font-weight: 400;
+            margin-top: 20px;
+        }
+
+        .socialIcons {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+
+            .socialIcon {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .secondColumn {
+        .secondTilte {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .secondDescr {
+            margin-top: 20px;
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                color: #A259FF;
+            }
+        }
+    }  
+    
+    .thirdColumn {
+        .thirdTitle {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .thirdDescr {
+            font-size: 16px;
+            font-weight: 400;
+            margin-top: 25px;
+        }
+
+        .subscribeForm {
+            display: inline-block;
+            position: relative;
+            margin-top: 20px;
+
+            .input {
+                width: 425px;
+                padding: 20px 195px 20px 20px;
+                border-radius: 20px;
+                background-color: #FFF;
+                outline: none;
+                border: none;
+                color: #2B2B2B;
+            }
+
+            .btnWidget {
+                @include flexCenter;
+                gap: 12px;
+                border-radius: 20px;
+                background-color: #A259FF;
+                padding: 18px 50px;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                margin-left: -31%;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .container {
+        padding: 40px 72px;
+
+        .threeColumns {
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .container {
+        padding: 40px 30px;
+
+        .threeColumns {
+            
+            .thirdColumn {
+                
+                .subscribeForm {
+                    display: flex;
+                    flex-direction: column;
+                    
+                    .input {
+                        width: 100%;
+                        padding-right: 0;
+                    }
+
+                    .btnWidget {
+                        width: 100%;
+                        margin-top: 15px;
+                        margin-left: 0;
+                        position: static;
+                    }
+                }
+            }
+        }
+    }
+}

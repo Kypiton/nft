@@ -1,0 +1,284 @@
+@import 'mixins/mixins.scss';
+
+.container {
+  padding: 80px 115px 0 115px;
+
+  .title {
+    font-size: 51px;
+    font-weight: 600;
+  }
+
+  .description {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 400;
+  }
+
+  .times {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 80px;
+
+    .timesBlock {
+      padding: 15px 60px;
+
+      .timesText {
+        color: #858584;
+        cursor: pointer;
+        font-size: 22px;
+        font-weight: 600;
+      }
+
+      .activeWord {
+        color: #fff;
+      }
+    }
+
+    .activeLine {
+      border-bottom: 2px solid #858584;
+    }
+  }
+
+  .tableHeader {
+    @include flexBetween;
+    margin-top: 40px;
+    border-radius: 20px;
+    border: 1px solid #3b3b3b;
+    padding: 12px 0;
+
+    .artistBlock {
+      @include flexCenter;
+      margin-left: 20px;
+      gap: 20px;
+
+      .sharp,
+      .artist,
+      .change,
+      .nftSolf,
+      .volume {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+      }
+    }
+
+    .aboutNft {
+      @include flexCenter;
+      gap: 155px;
+      padding-right: 180px;
+    }
+  }
+
+  .tableItems {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+    .tableItem {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #3b3b3b;
+      border-radius: 20px;
+      margin-top: 20px;
+      padding: 12px 0 12px 12px;
+      gap: 30px;
+
+      .left {
+        @include flexCenter;
+        gap: 20px;
+
+        .artistId {
+          background-color: #2b2b2b;
+          border-radius: 120px;
+          color: #858584;
+          padding: 4px 10px;
+        }
+
+        .artistImg {
+          border-radius: 100px;
+        }
+
+        .artistName {
+          font-size: 22px;
+          font-weight: 600;
+          max-width: min-content;
+        }
+      }
+
+      .right {
+        @include flexCenter;
+        gap: 180px;
+        padding-right: 180px;
+
+        .rightPercent {
+          color: #00ac4f;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1215px) {
+  .container {
+    padding: 40px 72px 0 72px;
+  }
+}
+
+@media screen and (max-width: 1125px) {
+  .container {
+    .title {
+      font-size: 38px;
+      font-weight: 600;
+    }
+
+    .description {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .tableHeader {
+      .aboutNft {
+        gap: 100px;
+        padding-right: 100px;
+        .nftSold {
+          display: none;
+        }
+      }
+    }
+
+    .times {
+      .timesBlock {
+        .timesText {
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .tableItems {
+      .tableItem {
+        .left {
+          .artistId {
+            background-color: transparent;
+          }
+          .artistImg {
+            width: 24px;
+            height: 24px;
+          }
+        }
+
+        .right {
+          gap: 110px;
+          padding-right: 90px;
+          .rightPrice {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 905px) {
+  .container {
+    .times {
+      .timesBlock {
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .container {
+    padding: 40px 30px 0 30px;
+
+    .title {
+      font-size: 28px;
+    }
+
+    .times {
+      .timesBlock {
+        .timesText {
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .tableHeader {
+      .aboutNft {
+        padding-right: 11px;
+        .change {
+          display: none;
+        }
+      }
+    }
+
+    .tableItems {
+      .tableItem {
+        .left {
+          gap: 10px;
+          .artistId {
+            font-size: 12px;
+            font-weight: 400;
+          }
+
+          .artistName {
+            font-size: 16px;
+            font-weight: 400;
+            max-width: max-content;
+          }
+        }
+
+        .right {
+          padding-right: 20px;
+          .rightPercent {
+            display: none;
+          }
+
+          .rightCurrency {
+            font-size: 12px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    .times {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+
+      .timesBlock {
+        .timesText {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .container {
+    .tableItems {
+      .tableItem {
+        .left {
+          .artistName {
+            max-width: min-content;
+          }
+        }
+      }
+    }
+  }
+}
